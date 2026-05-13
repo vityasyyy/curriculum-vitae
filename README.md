@@ -2,6 +2,9 @@
 
 This repository contains the LaTeX source files for Muhammad Argya Vityasy's curriculum vitae.
 
+## Compiled CV
+[CV](./Muhammad_Argya_Vityasy_CV.pdf)
+
 ## Quick Start
 
 There are three ways to get the PDF:
