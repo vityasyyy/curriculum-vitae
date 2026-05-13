@@ -7,6 +7,7 @@ This repository contains the LaTeX source files for Muhammad Argya Vityasy's cur
 There are three ways to get the PDF:
 
 ### 1. Download the pre-built PDF
+
 The latest compiled PDF is available in this repository:
 
 - **[Muhammad_Argya_Vityasy_CV.pdf](./Muhammad_Argya_Vityasy_CV.pdf)** — click to view/download
@@ -17,26 +18,32 @@ The latest compiled PDF is available in this repository:
 
 ### 2. Compile locally
 
-You need a working LaTeX distribution (e.g., TeX Live or MiKTeX) installed on your system.
+You need a working LaTeX distribution (e.g., TeX Live or MiKTeX) and `make` installed.
 
 **Requirements:**
 - `pdflatex` (part of any standard LaTeX distribution)
+- `make` (optional but recommended)
 
-**Steps:**
+**Steps (with Make):**
 
 ```bash
-# Clone the repository
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
-
-# Compile the CV
-pdflatex main.tex
-
-# Optional: run twice to resolve hyperlinks and outlines
-pdflatex main.tex
+make
 ```
 
-The output will be `main.pdf`.
+**Steps (without Make):**
+
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+mkdir -p build
+pdflatex -output-directory=build -jobname=Muhammad_Argya_Vityasy_CV src/main.tex
+pdflatex -output-directory=build -jobname=Muhammad_Argya_Vityasy_CV src/main.tex
+cp build/Muhammad_Argya_Vityasy_CV.pdf .
+```
+
+Run twice to resolve hyperlinks and outlines.
 
 #### Platform-specific notes
 
@@ -44,36 +51,40 @@ The output will be `main.pdf`.
 If `pdflatex` is not found, ensure it is in your `PATH`:
 ```bash
 export PATH="/Library/TeX/texbin:/usr/local/texlive/2026/bin/universal-darwin:$PATH"
-pdflatex main.tex
+make
 ```
 
 **Linux (TeX Live):**
 Install via your package manager (e.g., `sudo apt install texlive-full` on Debian/Ubuntu), then run:
 ```bash
-pdflatex main.tex
+make
 ```
 
 **Windows (MiKTeX / TeX Live):**
 Open Command Prompt or PowerShell in the repo folder and run:
 ```powershell
-pdflatex main.tex
+make
 ```
 
 ---
 
 ### 3. Compile with Docker (no local LaTeX needed)
 
-If you do not want to install a full LaTeX distribution, use the official TeX Live Docker image:
+If you do not want to install a full LaTeX distribution, use the Makefile target:
 
 ```bash
-# Build the PDF inside a container
-docker run --rm -v "$(pwd):/workspace" -w /workspace texlive/texlive:latest pdflatex main.tex
-
-# Optional: run twice to resolve hyperlinks and outlines
-docker run --rm -v "$(pwd):/workspace" -w /workspace texlive/texlive:latest pdflatex main.tex
+make docker
 ```
 
-The output `main.pdf` will appear in your current directory.
+Or manually:
+
+```bash
+docker run --rm -v "$(pwd):/workspace" -w /workspace texlive/texlive:latest \
+  pdflatex -output-directory=build -jobname=Muhammad_Argya_Vityasy_CV src/main.tex
+docker run --rm -v "$(pwd):/workspace" -w /workspace texlive/texlive:latest \
+  pdflatex -output-directory=build -jobname=Muhammad_Argya_Vityasy_CV src/main.tex
+cp build/Muhammad_Argya_Vityasy_CV.pdf .
+```
 
 > **Note:** The first run may take a while as Docker pulls the `texlive/texlive` image (~4 GB). Subsequent runs will be fast.
 
@@ -83,24 +94,28 @@ The output `main.pdf` will appear in your current directory.
 
 ```
 .
-├── main.tex                          # CV content only
-├── settings.tex                      # Preamble, packages, custom commands
-├── Muhammad_Argya_Vityasy_CV.pdf    # Pre-built PDF
-└── README.md                         # This file
+├── .gitignore                         # Ignores LaTeX build artifacts
+├── Makefile                           # Build automation
+├── Muhammad_Argya_Vityasy_CV.pdf      # Pre-built PDF (tracked)
+├── README.md                          # This file
+├── build/                             # Build output directory (gitignored)
+└── src/
+    ├── main.tex                       # CV content — edit this
+    └── settings.tex                   # Preamble, packages, macros — rarely edited
 ```
 
 ### Separation of Concerns
 
-- **`settings.tex`** — All LaTeX boilerplate: package imports, page geometry, custom macros, section formatting, and styling. You should rarely need to edit this.
-- **`main.tex`** — The actual curriculum vitae content (heading, education, work experience, projects, skills). This is where you make content updates.
+- **`src/settings.tex`** — All LaTeX boilerplate: package imports, page geometry, custom macros, section formatting, and styling. You should rarely need to edit this.
+- **`src/main.tex`** — The actual curriculum vitae content (heading, education, work experience, projects, skills). This is where you make content updates.
 
 ---
 
 ## Customization
 
-To update your CV, edit **`main.tex`** and recompile with any of the methods above.
+To update your CV, edit **`src/main.tex`** and recompile with `make`.
 
-If you want to change fonts, margins, colors, or add new section macros, edit **`settings.tex`**.
+If you want to change fonts, margins, colors, or add new section macros, edit **`src/settings.tex`**.
 
 ---
 
@@ -108,9 +123,9 @@ If you want to change fonts, margins, colors, or add new section macros, edit **
 
 | Issue | Solution |
 |-------|----------|
-| `pdflatex: command not found` | Install a LaTeX distribution or use the Docker method. |
-| Overfull hbox warnings | Usually cosmetic; caused by long lines in tabular environments. Shorten text or adjust column widths in `settings.tex` if needed. |
-| `main.out` changed warning | Run `pdflatex` a second time to resolve PDF outlines and hyperlinks. |
+| `pdflatex: command not found` | Install a LaTeX distribution or use `make docker`. |
+| Overfull hbox warnings | Usually cosmetic; shorten text or adjust column widths in `settings.tex`. |
+| Hyperlinks not resolved | Run `pdflatex` twice (or just use `make`, which does this automatically). |
 
 ---
 
