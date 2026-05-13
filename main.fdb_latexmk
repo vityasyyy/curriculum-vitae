@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1778696762.38349 "main.tex" "main.pdf" "main" 1778696763.02205 0
+["pdflatex"] 1778697166.78885 "main.tex" "main.pdf" "main" 1778697167.42857 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -97,9 +97,9 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1778573936 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1778573877 3636770 23df92fdca8b70c6a8e88f7c4981080c ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "main.aux" 1778696762.95297 730 c07353e8443b22ebf7b995f06ac9aad6 "pdflatex"
-  "main.out" 1778696762.95447 492 edd9ba61ef995c6b6081825095eaa4db "pdflatex"
-  "main.tex" 1778696760.36288 5695 4cef4e5e5b3b08db0b0de9cc66435c99 ""
+  "main.aux" 1778697167.36261 730 c07353e8443b22ebf7b995f06ac9aad6 "pdflatex"
+  "main.out" 1778697167.36496 492 edd9ba61ef995c6b6081825095eaa4db "pdflatex"
+  "main.tex" 1778697166.03323 5926 b41e85f37ee8a1c13a17782f38a545a0 ""
   "settings.tex" 1778693161.43688 2189 fb7d4762643d13b283ec03299838de2f ""
   (generated)
   "main.aux"
