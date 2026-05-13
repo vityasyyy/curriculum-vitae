@@ -1,10 +1,12 @@
-.PHONY: all clean docker
+.PHONY: all local clean docker
 
 SRC      := src/main.tex
 OUTDIR   := build
 PDF_OUT  := Muhammad_Argya_Vityasy_CV.pdf
 
-all: $(PDF_OUT)
+all: docker
+
+local: $(PDF_OUT)
 
 $(PDF_OUT): $(SRC) src/settings.tex
 	pdflatex -output-directory=$(OUTDIR) -jobname=$(basename $(PDF_OUT)) $(SRC)
@@ -20,4 +22,4 @@ docker: $(SRC) src/settings.tex
 	cp $(OUTDIR)/$(PDF_OUT) .
 
 clean:
-	rm -rf $(OUTDIR)
+	rm -rf $(OUTDIR) $(PDF_OUT)
