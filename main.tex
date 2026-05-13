@@ -1,0 +1,82 @@
+\input{settings}
+
+\begin{document}
+
+% ---------- HEADING ----------
+\begin{center}
+    {\Huge \scshape Muhammad Argya Vityasy} \\ \vspace{4pt}
+    \small Yogyakarta, Indonesia $|$ \href{mailto:vityasyyy@gmail.com}{\underline{vityasyyy@gmail.com}} $|$ (+62) 811 2950 70 $|$ 
+    \href{https://linkedin.com/in/vityasyyy}{\underline{LinkedIn}} $|$
+    \href{https://github.com/vityasyyy}{\underline{GitHub}}
+\end{center}
+
+% ---------- EDUCATION ----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universitas Gadjah Mada}{Yogyakarta, Indonesia}
+      {Bachelor of Computer Science \textbar{} Cumulative GPA: 3.85/4.00 (113/144 credits)}{August 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework:} Algorithms and Data Structures, Scalable Software Engineering, Software Engineering Methods, Cloud Computing, Computer Network, Cyber Security}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+% ---------- WORK EXPERIENCE ----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Backend Developer $|$ PT Satria Duta Raya}{October 2025 -- January 2026}
+      {\small\textit{B2B procurement platform enabling businesses to discover ranked products through an asynchronous recommendation pipeline.}}{}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented a production-grade Go backend (Gin) with strict domain boundaries across authentication, buyer, supplier, product, order, and notification domains.}
+        \resumeItem{Built an event-driven product ranking pipeline using Redis Streams, decoupling heavy computation from request handling while ensuring consistency through idempotent consumers.}
+        \resumeItem{Implemented failure-aware background processing with Dead Letter Queues and bounded retries to safely handle transient errors.}
+        \resumeItem{Integrated PostgreSQL and MinIO for secure, S3-compatible object storage, supporting transactional integrity and safe object handling.}
+        \resumeItem{Operated the system as a live service with full observability, monitoring request throughput, latency, background worker health, and resource utilization using Prometheus and Grafana.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Backend Developer $|$ Jogja International Model United Nation 2025}{April 2025 -- October 2025}
+      {\small\textit{Annual academic simulation of the United Nations bringing together students worldwide for diplomatic debates.}}{}
+      \resumeItemListStart
+        \resumeItem{Architected and deployed a scalable event management platform using Go (Gin-Gonic), PostgreSQL, and AWS S3, leveraging Docker-based deployments and optimized database indexing and schema to process 10,000+ API requests, 500+ concurrent registrations, and 5GB+ of user data with high reliability.}
+        \resumeItem{Enhanced operational efficiency by 40\% by building a role-based admin dashboard that automated user verification and approval workflows, reducing manual processing time for 150+ staff actions and improving data integrity.}
+        \resumeItem{Maintained 99.9\% uptime under peak load of 500+ daily users through backend performance tuning, API integration optimization, and real-time monitoring for consistent, low-latency user experience.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Backend Developer $|$ Organisasi Mahasiswa Ahli Teknologi Informasi UGM}{March 2024 -- July 2025}
+      {\small\textit{Student-led IT organization comprising 8 specialized divisions and 80+ members managing real-world software projects.}}{}
+      \resumeItemListStart
+        \resumeItem{Engineered a reusable, modular backend framework leveraging Go, Node.js, PostgreSQL, and Docker, reducing project development and deployment time by 60\% and improving maintainability across multiple services.}
+        \resumeItem{Deployed the framework in 4 production-grade client projects, handling 3,000+ user registrations, high-concurrency workloads, and maintaining 99.9\% uptime under real-world traffic conditions.}
+        \resumeItem{Led and mentored a 15-member backend engineering group, driving technical growth through weekly sessions on CI/CD pipelines, distributed systems, caching strategies, message brokers, Kubernetes orchestration, automated testing, and secure authentication practices.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+% ---------- PROJECTS ----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Mock Test of Indonesia's National University Entrance Examination} $|$ \href{https://github.com/vityasyyy}{\underline{GitHub}}}{}
+      \resumeItemListStart
+        \resumeItem{Designed and deployed a four-service microservices backend for a national exam platform using Go (Gin) and Docker.}
+        \resumeItem{Supported 200+ concurrent users with 99.9\% uptime and sub-50 ms API latency under load.}
+        \resumeItem{Implemented token-based authentication and a timed exam engine, exposing 20+ REST APIs.}
+        \resumeItem{Processed 150+ exam sessions from a 1,000-question bank with <5\% user error rate.}
+        \resumeItem{Designed a migration plan to introduce Kafka-based asynchronous processing and Kubernetes orchestration for future scalability.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+% ---------- ADDITIONAL SKILLS & INTERESTS ----------
+\section{Additional Skills \& Interests}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Technical Skills}{: Git, GitHub, Gin-Gonic (Go), Express (TypeScript), PostgreSQL (SQL), MongoDB (No-SQL), Kafka, Redis, Loki, Grafana, Prometheus, Docker, Terraform, Ansible, Neovim} \\ \vspace{2pt}
+     \textbf{Interests}{: Cloud computing, DevSecOps, distributed systems, container orchestration, system design \& scalability}
+    }}
+ \end{itemize}
+
+\end{document}
