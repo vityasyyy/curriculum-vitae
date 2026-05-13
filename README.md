@@ -30,16 +30,16 @@ You need a working LaTeX distribution (e.g., TeX Live or MiKTeX) and `make` inst
 **Steps (with Make):**
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/vityasyyy/curriculum-vitae.git
+cd curriculum-vitae
 make
 ```
 
 **Steps (without Make):**
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/vityasyyy/curriculum-vitae.git
+cd curriculum-vitae
 mkdir -p build
 pdflatex -output-directory=build -jobname=Muhammad_Argya_Vityasy_CV src/main.tex
 pdflatex -output-directory=build -jobname=Muhammad_Argya_Vityasy_CV src/main.tex
