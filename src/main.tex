@@ -16,9 +16,6 @@
     \resumeSubheading
       {Universitas Gadjah Mada}{Yogyakarta, Indonesia}
       {Bachelor of Computer Science \textbar{} Cumulative GPA: 3.85/4.00 \textbar{} Expected Graduation: 2027}{August 2023 -- Present}
-      \resumeItemListStart
-        \resumeItem{\textbf{Relevant Coursework:} Algorithms and Data Structures, Scalable Software Engineering, Software Engineering Methods, Cloud Computing, Computer Networks, Cyber Security}
-      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 % ---------- WORK EXPERIENCE ----------
@@ -30,7 +27,7 @@
       {Enterprise AI automation platform building multi-agent LLM systems for HR, payroll, and project management workflows.}{}
       \resumeItemListStart
         \resumeItem{Built \textbf{LLM-powered agents} with structured outputs and tool execution, orchestrating multi-step HR and project management workflows across 3+ workflow types via routing and provider fallback.}
-        \resumeItem{Built a \textbf{compliance monitoring pipeline} with scheduled event triggers and automated audit report generation, replacing manual report tracking across organizational workflows.}
+        \resumeItem{Built \textbf{data-driven compliance pipelines} that fetch multi-source HR/payroll data and scan structured documents against 8 rule-based checks, auto-generating audit reports to replace manual tracking.}
         \resumeItem{Built a \textbf{multi-tenant IAM SDK} standardizing authentication across enterprise projects, handling tenant isolation and provider synchronization with \textbf{atomic multi-provider transactions} to prevent partial-state failures on rollback.}
         \resumeItem{Authored \textbf{Playwright end-to-end test suites} integrated into CI to catch regressions and validate multi-agent tool execution across workflow paths before production deployment.}
       \resumeItemListEnd
@@ -57,7 +54,6 @@
       {Student-led IT organization comprising 8 specialized divisions and 80+ members managing real-world software projects.}{}
       \resumeItemListStart
         \resumeItem{Built a \textbf{reusable Go/Node.js/Docker backend framework} deployed across 4 client projects, \textbf{cutting development and deployment time by 60\%}.}
-        \resumeItem{Handled \textbf{3,000+ user registrations} and high-concurrency workloads with stable uptime across all deployed projects.}
         \resumeItem{Led weekly technical discussions for 15 engineers, driving adoption of \textbf{Docker-based deployment standardization} and shared backend tooling across project teams.}
       \resumeItemListEnd
 
@@ -66,12 +62,13 @@
 % ---------- PROJECTS ----------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeProjectHeading
-      {\textbf{National University Entrance Exam Mock Platform} $|$ \href{https://github.com/vityasyyy/omah-to}{\underline{GitHub}}}{}
-      \resumeItemListStart
-        \resumeItem{Served \textbf{200+ concurrent users} at \textbf{sub-50ms latency} across a 4-service \textbf{Go/Docker microservices architecture} with token-based auth and per-service database isolation.}
-        \resumeItem{Processed \textbf{150+ timed exam sessions} from a 1,000-question bank with \textbf{\textless{}5\% error rate} via a custom exam engine exposing 20+ REST APIs and connection-pooled PostgreSQL queries.}
-      \resumeItemListEnd
+     \resumeProjectHeading
+       {\textbf{InvenioRDM GitOps Infrastructure} $|$ \href{https://github.com/vityasyyy/invenio-rdm-gitops}{\underline{GitHub}}}{}
+       \resumeItemListStart
+        \resumeItem{Deployed a full-stack research data platform on \textbf{Kubernetes} using \textbf{ArgoCD} with 16 application definitions across 9 sync waves, automating infrastructure provisioning from security policies through to application rollout.}
+        \resumeItem{Architected zero-inbound network topology via \textbf{Cloudflare Tunnel} with default-deny NetworkPolicies, \textbf{Sealed Secrets} for encrypted GitOps, and restricted Pod Security Admission --- eliminating exposed firewall ports.}
+        \resumeItem{Shipped full-stack observability (\textbf{Prometheus, Grafana, Loki, Alertmanager}) with 4 dashboards and Discord alerting, plus a 3-pipeline \textbf{CI system} validating Kubernetes manifests, scanning for leaked secrets, and verifying deployment health.}
+       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 % ---------- ADDITIONAL SKILLS & INTERESTS ----------
@@ -79,8 +76,8 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages \& Frameworks}{: Go, Python, TypeScript, Gin-Gonic, Express, Pydantic} \\ \vspace{2pt}
-     \textbf{Data \& Infrastructure}{: PostgreSQL, MongoDB, Redis, Kafka, Docker, Colima, Terraform, Ansible, AWS S3, MinIO} \\ \vspace{2pt}
-     \textbf{Observability \& Testing}{: Prometheus, Grafana, Playwright, OpenTelemetry} \\ \vspace{2pt}
+     \textbf{Data \& Infrastructure}{: PostgreSQL, MongoDB, Redis, Kafka, Docker, Kubernetes, ArgoCD, Terraform, Ansible, AWS S3, MinIO} \\ \vspace{2pt}
+     \textbf{Observability \& Testing}{: Prometheus, Grafana, Loki, Playwright, OpenTelemetry, CI/CD} \\ \vspace{2pt}
      \textbf{Interests}{: LLM-powered automation, distributed systems, cloud computing}
     }}
  \end{itemize}
